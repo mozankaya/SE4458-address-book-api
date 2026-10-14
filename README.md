@@ -6,8 +6,8 @@ Student: Mehmet Ozan Kaya
 A simple REST API to create, edit, update, delete, search, sort and favorite contacts.
 Built with **FastAPI** and deployed on **Vercel**. Data is stored in memory.
 
-- **Source code:** https://github.com/YOUR_USERNAME/address-book-api
-- **Live API (Swagger):** https://YOUR_PROJECT.vercel.app/docs
+- **Source code:** https://github.com/mozankaya/SE4458-address-book-api
+- **Live API (Swagger):** https://se4458-address-book-api.vercel.app/docs
 
 ## Endpoints
 
@@ -46,8 +46,7 @@ Swagger UI is generated automatically by FastAPI at `/docs`. The base URL redire
 ## Issues encountered
 
 - **In-memory data on Vercel:** Vercel runs the app as a serverless function. When it is idle it shuts down, and the next request starts with fresh memory, so added contacts can disappear and the sample data comes back. This is expected with an in-memory database on serverless hosting.
-
-<!-- TODO: add the problems you actually hit while building/deploying -->
+- **Tests could not import the app:** Running `pytest` failed with `ModuleNotFoundError: No module named 'app'`, because the project root was not on Python's import path. Adding a `pytest.ini` with `pythonpath = .` fixed it.
 
 ## Run locally
 
@@ -60,5 +59,5 @@ Then open http://127.0.0.1:8000/docs. Run tests with `pytest`.
 
 ## Deploy
 
-Push to GitHub, import the repo in Vercel (framework preset: **Other**) and deploy.
+Push to GitHub, import the repo in Vercel (framework preset: **FastAPI**) and deploy.
 If `/docs` asks for a Vercel login, turn off *Deployment Protection* in the project settings.
