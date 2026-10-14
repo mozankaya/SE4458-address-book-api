@@ -30,7 +30,7 @@ Example: `GET /contacts?search=alan&sort_by=last_name&order=desc`
 - `app/main.py` – FastAPI app and endpoints
 - `app/models.py` – Pydantic models for validation and Swagger docs
 - `app/store.py` – in-memory database (a Python dict) with search/filter/sort logic and sample data
-- `api/index.py` + `vercel.json` – Vercel entry point; all requests are routed to the FastAPI app
+- Vercel's FastAPI preset finds the `app` object in `app/main.py` automatically, so no extra deployment config is needed
 
 Swagger UI is generated automatically by FastAPI at `/docs`. The base URL redirects there.
 

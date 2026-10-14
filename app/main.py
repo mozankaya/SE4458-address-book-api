@@ -5,8 +5,8 @@ from typing import Literal, Optional
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import RedirectResponse
 
-from . import store
-from .models import Contact, ContactCreate, ContactList, ContactPatch
+from app import store
+from app.models import Contact, ContactCreate, ContactList, ContactPatch
 
 app = FastAPI(
     title="Address Book API",
